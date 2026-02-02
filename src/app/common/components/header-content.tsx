@@ -1,9 +1,10 @@
 export default function HeaderContent() {
   return (
     <header>
-      <svg href="./assets/images/logo.svg" />
+      <img src="./assets/images/logo.svg" />
+      <h1>Extensions</h1>
       <div className="theme-button">
-        <svg href="./assets/images/icon-moon.svg" />
+        <img src="./assets/images/icon-moon.svg" />
       </div>
     </header>
   );
