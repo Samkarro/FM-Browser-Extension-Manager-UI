@@ -25,7 +25,15 @@ export default function MainContent() {
           extensions.map((extension) => {
             return (
               <div className="extension" key={extension.name}>
-                <div className="extension-info-container">{extension.name}</div>
+                <div className="extension-info-container">
+                  <div className="extension-image-container">
+                    <img src={extension.logo} />
+                  </div>
+                  <div className="extension-text-container">
+                    <h2>{extension.name}</h2>
+                    <p>{extension.description}</p>
+                  </div>
+                </div>
                 <div className="extension-interactions-container">
                   <div className="remove-button clickable">Remove</div>
                   <div className="toggle clickable"></div>
