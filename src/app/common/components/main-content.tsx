@@ -1,4 +1,5 @@
 import data from "../data.json";
+import "../styles/main-content.styles.css";
 
 export default function MainContent() {
   const stringified = JSON.stringify(data);
@@ -13,12 +14,10 @@ export default function MainContent() {
     <main>
       <div className="extension-sorter-container">
         <h1>Extensions List</h1>
-
-        <div className="extension-sorter">
-          {/* TODO: implement buttons */}
-          <div className=""></div>
-          <div></div>
-          <div></div>
+        <div className="extension-filter">
+          <div className="filter-button">All</div>
+          <div className="filter-button">Active</div>
+          <div className="filter-button">Inactive</div>
         </div>
       </div>
       <div className="extensions-container">
