@@ -13,11 +13,11 @@ export default function MainContent() {
   return (
     <main>
       <div className="extension-sorter-container">
-        <h1>Extensions List</h1>
+        <h1 className="unhoverable">Extensions List</h1>
         <div className="extension-filter">
-          <div className="filter-button">All</div>
-          <div className="filter-button">Active</div>
-          <div className="filter-button">Inactive</div>
+          <div className="filter-button clickable">All</div>
+          <div className="filter-button clickable">Active</div>
+          <div className="filter-button clickable">Inactive</div>
         </div>
       </div>
       <div className="extensions-container">
@@ -27,8 +27,8 @@ export default function MainContent() {
               <div className="extension" key={extension.name}>
                 <div className="extension-info-container">{extension.name}</div>
                 <div className="extension-interactions-container">
-                  <div className="remove-button">Remove</div>
-                  <div className="toggle"></div>
+                  <div className="remove-button clickable">Remove</div>
+                  <div className="toggle clickable"></div>
                 </div>
               </div>
             );

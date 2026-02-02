@@ -1,6 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --gray: #3d3d3d;
+  --light-gray: #626262;
+  --red: #ffffff;
+  --light-red: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +21,19 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+p,
+h1,
+h2,
+div,
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
 }
 
 body {
@@ -47,6 +67,14 @@ header {
 }
 main {
   width: 100%;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.unhoverable:hover {
+  pointer-events: none;
 }
 
 @media (prefers-color-scheme: dark) {
