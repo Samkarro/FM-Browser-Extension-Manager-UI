@@ -21,7 +21,11 @@ export default function HeaderContent() {
 
   return (
     <header>
-      <img src="./assets/images/logo.svg" />
+      {resolvedTheme == "light" ? (
+        <img src="./assets/images/logo.svg" />
+      ) : (
+        <img src="./assets/images/logolight.svg" />
+      )}
       <div className="theme-button clickable" onClick={() => switchTheme()}>
         {mounted ? (
           resolvedTheme === "dark" ? (
