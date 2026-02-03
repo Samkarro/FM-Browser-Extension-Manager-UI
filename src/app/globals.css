@@ -14,6 +14,15 @@
   --red: #db4332;
   --light-red: #db261f;
   --blue: #0a1035;
+
+  /* Filter button */
+  --filter-red-hover: #db4332;
+  --filter-red: #d3231d;
+  --filter-text: white;
+  --filter-gray: #f8fcff;
+  --filter-hover: #eff8ff;
+  --filter-border: rgba(0, 0, 0, 0.099);
+  --filter-text-hover: #0a10359f;
 }
 [data-theme="dark"] {
   --background: linear-gradient(
@@ -29,6 +38,14 @@
   --red: #db4332;
   --light-red: #f75a55;
   --blue: #0a1035;
+
+  /* Filter button */
+  --filter-red-hover: #db4332;
+  --filter-red: #f75a55;
+  --filter-text: #0a1035;
+  --filter-gray: #293143;
+  --filter-hover: #505663;
+  --filter-border: rgba(255, 255, 255, 0.099);
 }
 
 html,

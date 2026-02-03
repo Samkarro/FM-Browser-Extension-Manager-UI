@@ -25,23 +25,33 @@
 
   user-select: none;
 
-  background-color: var(--gray-alt);
-  border: 2px solid rgba(255, 255, 255, 0.099);
+  background-color: var(--filter-gray);
+  border: 2px solid var(--filter-border);
   transition: 200ms;
 }
 
+[data-theme="light"] .filter-button {
+  box-shadow: 0px 0px 2px var(--filter-border);
+}
+
 .filter-button:hover {
-  background-color: var(--light-gray);
+  background-color: var(--filter-hover);
+  color: var(--filter-text-hover);
+}
+
+[data-theme="light"] .filter-button:hover {
+  box-shadow: none;
 }
 
 .filter-active {
-  background-color: var(--light-red);
-  color: var(--blue);
-  border-color: var(--light-red);
+  background-color: var(--filter-red);
+  color: var(--filter-text);
+  border-color: var(--filter-red);
 }
 .filter-active:hover {
-  background-color: var(--red);
-  border-color: var(--red);
+  background-color: var(--filter-red-hover);
+  border-color: var(--filter-red-hover);
+  color: var(--filter-text);
 }
 
 /* Extension cards */
