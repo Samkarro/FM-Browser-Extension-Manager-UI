@@ -5,18 +5,25 @@ import "../styles/main-content.styles.css";
 
 export default function MainContent() {
   const [extensions, setExtensions] = useState(data);
+  const [filter, setFilter] = useState("All");
+  const filters = ["All", "Active", "Inactive"];
 
-  useEffect(() => {
-    console.log("removed");
-  }, [extensions]);
   return (
     <main>
       <div className="extension-sorter-container">
         <h1 className="unhoverable">Extensions List</h1>
         <div className="extension-filter">
-          <div className="filter-button clickable">All</div>
-          <div className="filter-button clickable">Active</div>
-          <div className="filter-button clickable">Inactive</div>
+          {filters.map((f) => {
+            return (
+              <div
+                key={f}
+                className={`filter-button clickable ${f === filter ? "filter-active" : ""}`}
+                onClick={() => setFilter(f)}
+              >
+                {f}
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className="extensions-container">
