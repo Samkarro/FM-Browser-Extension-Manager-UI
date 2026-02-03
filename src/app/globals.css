@@ -8,7 +8,7 @@
   --gray-alt: #293143;
   --light-gray: #505663;
   --red: #db4332;
-  --light-red: #eb5650;
+  --light-red: #f75a55;
   --blue: #0a1035;
 }
 
@@ -83,5 +83,11 @@ main {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media (max-width: 1200px) {
+  .view-wrapper {
+    width: calc(100vw - 8%);
   }
 }

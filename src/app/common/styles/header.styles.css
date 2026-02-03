@@ -23,3 +23,10 @@ header {
 .theme-button:hover {
   background-color: var(--light-gray);
 }
+
+@media (max-width: 1200px) {
+  header {
+    border-radius: 12px;
+    padding: 12px;
+  }
+}
