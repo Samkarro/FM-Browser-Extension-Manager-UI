@@ -1,8 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+[data-theme="light"] {
+  /* Main colors */
+  --background: linear-gradient(
+    180deg,
+    rgb(226, 240, 255) 0%,
+    rgb(242, 255, 253) 100%
+  );
+  --foreground: var(--blue);
+  --gray: #f4faff;
+  --gray-alt: #f8fcff;
+  --light-gray: rgb(193, 193, 193);
+  --red: #db4332;
+  --light-red: #db261f;
+  --blue: #0a1035;
+
+  /* Filter button */
+  --filter-red-hover: #db4332;
+  --filter-red: #d3231d;
+  --filter-text: white;
+  --filter-gray: #f8fcff;
+  --filter-hover: #eff8ff;
+  --filter-border: rgba(0, 0, 0, 0.099);
+  --filter-text-hover: #0a10359f;
+}
+[data-theme="dark"] {
+  /* Main colors */
+  --background: linear-gradient(
+    180deg,
+    rgb(6, 12, 26) 0%,
+    rgb(13, 25, 67) 100%
+  );
+  --foreground: #ffffff;
 
   --gray: #212634;
   --gray-alt: #293143;
@@ -10,27 +39,20 @@
   --red: #db4332;
   --light-red: #f75a55;
   --blue: #0a1035;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Filter button */
+  --filter-red-hover: #db4332;
+  --filter-red: #f75a55;
+  --filter-text: #0a1035;
+  --filter-gray: #293143;
+  --filter-hover: #505663;
+  --filter-border: rgba(255, 255, 255, 0.099);
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-p,
-h1,
-h2,
-div,
-body {
-  font-family: "Noto Sans", sans-serif;
 }
 
 h1 {
@@ -40,9 +62,8 @@ h1 {
 
 body {
   color: var(--foreground);
-  background: rgb(3, 10, 36);
-  background: linear-gradient(180deg, rgb(6, 12, 26) 0%, rgb(13, 25, 67) 100%);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  font-family: "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -68,6 +89,7 @@ header {
   margin-right: auto;
   margin-top: 40px;
 }
+
 main {
   width: 100%;
 }
@@ -76,16 +98,10 @@ main {
   cursor: pointer;
 }
 
-.unhoverable:hover {
-  pointer-events: none;
+:focus-visible {
+  outline: solid 3px #db4332;
+  outline-offset: 2px;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
 @media (max-width: 1200px) {
   .view-wrapper {
     width: calc(100vw - 8%);

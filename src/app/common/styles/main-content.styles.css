@@ -25,23 +25,33 @@
 
   user-select: none;
 
-  background-color: var(--gray-alt);
-  border: 2px solid rgba(255, 255, 255, 0.099);
+  background-color: var(--filter-gray);
+  border: 2px solid var(--filter-border);
   transition: 200ms;
 }
 
+[data-theme="light"] .filter-button {
+  box-shadow: 0px 0px 2px var(--filter-border);
+}
+
 .filter-button:hover {
-  background-color: var(--light-gray);
+  background-color: var(--filter-hover);
+  color: var(--filter-text-hover);
+}
+
+[data-theme="light"] .filter-button:hover {
+  box-shadow: none;
 }
 
 .filter-active {
-  background-color: var(--light-red);
-  color: var(--blue);
-  border-color: var(--light-red);
+  background-color: var(--filter-red);
+  color: var(--filter-text);
+  border-color: var(--filter-red);
 }
 .filter-active:hover {
-  background-color: var(--red);
-  border-color: var(--red);
+  background-color: var(--filter-red-hover);
+  border-color: var(--filter-red-hover);
+  color: var(--filter-text);
 }
 
 /* Extension cards */
@@ -60,6 +70,11 @@
   background-color: var(--gray);
 }
 
+[data-theme="light"] .extension {
+  box-shadow: 0px 2px 7px var(--filter-border);
+  border-color: rgba(70, 70, 70, 0.162);
+}
+
 .extension-info-container {
   display: flex;
   gap: 20px;
@@ -73,6 +88,10 @@
 
 .extension-info-container p {
   color: rgb(160, 160, 160);
+}
+
+[data-theme="light"] .extension-info-container p {
+  color: rgb(95, 95, 95);
 }
 
 .extension-text-container {
@@ -90,6 +109,11 @@
   user-select: none;
 
   transition: 200ms;
+}
+
+[data-theme="light"] .remove-button:hover {
+  color: white;
+  background-color: var(--red);
 }
 
 .remove-button:hover {
@@ -123,6 +147,9 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
   background-color: var(--light-red);
 }
+[data-theme="light"] input[type="checkbox"]:checked:hover {
+  background-color: var(--red);
+}
 
 input[type="checkbox"]::after {
   content: "";
@@ -150,6 +177,7 @@ input[type="checkbox"]:checked::after {
   .extension-sorter-container {
     flex-direction: column;
     gap: 20px;
+    margin-top: 40px;
   }
 }
 
@@ -162,6 +190,5 @@ input[type="checkbox"]:checked::after {
   .extension-sorter-container {
     flex-direction: column;
     gap: 20px;
-    margin-top: 40px;
   }
 }
