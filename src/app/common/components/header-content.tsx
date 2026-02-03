@@ -1,10 +1,12 @@
+import "../styles/header.styles.css";
+
 export default function HeaderContent() {
   return (
     <header>
       <img src="./assets/images/logo.svg" />
-      <h1>Extensions</h1>
+
       <div className="theme-button clickable">
-        <img src="./assets/images/icon-moon.svg" />
+        <img src="./assets/images/icon-sun.svg" />
       </div>
     </header>
   );
