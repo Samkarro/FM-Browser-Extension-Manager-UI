@@ -75,6 +75,7 @@
   width: min-content;
   padding: 10px 18px;
   font-weight: 500;
+  user-select: none;
 
   transition: 200ms;
 }

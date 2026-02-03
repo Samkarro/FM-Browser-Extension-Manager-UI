@@ -1,15 +1,14 @@
+"use client";
+import { useEffect, useState } from "react";
 import data from "../data.json";
 import "../styles/main-content.styles.css";
 
 export default function MainContent() {
-  const stringified = JSON.stringify(data);
-  const extensions: {
-    logo: string;
-    name: string;
-    description: string;
-    isActive: boolean;
-  }[] = JSON.parse(stringified);
+  const [extensions, setExtensions] = useState(data);
 
+  useEffect(() => {
+    console.log("removed");
+  }, [extensions]);
   return (
     <main>
       <div className="extension-sorter-container">
@@ -22,7 +21,7 @@ export default function MainContent() {
       </div>
       <div className="extensions-container">
         {extensions &&
-          extensions.map((extension) => {
+          extensions.map((extension, index) => {
             return (
               <div className="extension" key={extension.name}>
                 <div className="extension-info-container">
@@ -35,7 +34,16 @@ export default function MainContent() {
                   </div>
                 </div>
                 <div className="extension-interactions-container">
-                  <div className="remove-button clickable">Remove</div>
+                  <div
+                    className="remove-button clickable"
+                    onClick={() =>
+                      setExtensions((prev) =>
+                        prev.filter((_, i) => i !== index),
+                      )
+                    }
+                  >
+                    Remove
+                  </div>
                   <input type="checkbox" className="toggle clickable"></input>
                 </div>
               </div>
