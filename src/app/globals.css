@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 [data-theme="light"] {
+  /* Main colors */
   --background: linear-gradient(
     180deg,
     rgb(226, 240, 255) 0%,
-    rgb(255, 255, 255) 100%
+    rgb(242, 255, 253) 100%
   );
   --foreground: var(--blue);
-
   --gray: #f4faff;
   --gray-alt: #f8fcff;
   --light-gray: rgb(193, 193, 193);
@@ -25,6 +25,7 @@
   --filter-text-hover: #0a10359f;
 }
 [data-theme="dark"] {
+  /* Main colors */
   --background: linear-gradient(
     180deg,
     rgb(6, 12, 26) 0%,
