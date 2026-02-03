@@ -80,10 +80,10 @@ main {
   cursor: pointer;
 }
 
-.unhoverable:hover {
-  pointer-events: none;
+:focus-visible {
+  outline: solid 3px #db4332;
+  outline-offset: 2px;
 }
-
 @media (max-width: 1200px) {
   .view-wrapper {
     width: calc(100vw - 8%);
