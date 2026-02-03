@@ -85,3 +85,9 @@ main {
     color-scheme: dark;
   }
 }
+
+@media (max-width: 1200px) {
+  .view-wrapper {
+    width: calc(100vw - 8%);
+  }
+}
