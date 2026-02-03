@@ -8,6 +8,20 @@ export default function MainContent() {
   const [filter, setFilter] = useState("All");
   const filters = ["All", "Active", "Inactive"];
 
+  const filteredExtensions = (() => {
+    switch (filter) {
+      case "Active":
+        return extensions.filter((ext) => ext.isActive);
+
+      case "Inactive":
+        return extensions.filter((ext) => !ext.isActive);
+
+      case "All":
+      default:
+        return extensions;
+    }
+  })();
+
   return (
     <main>
       <div className="extension-sorter-container">
@@ -27,48 +41,47 @@ export default function MainContent() {
         </div>
       </div>
       <div className="extensions-container">
-        {extensions &&
-          extensions.map((extension, index) => {
-            return (
-              <div className="extension" key={extension.name}>
-                <div className="extension-info-container">
-                  <div className="extension-image-container">
-                    <img src={extension.logo} />
-                  </div>
-                  <div className="extension-text-container">
-                    <h2>{extension.name}</h2>
-                    <p>{extension.description}</p>
-                  </div>
-                </div>
-                <div className="extension-interactions-container">
-                  <div
-                    className="remove-button clickable"
-                    onClick={() =>
-                      setExtensions((prev) =>
-                        prev.filter((_, i) => i !== index),
-                      )
-                    }
-                  >
-                    Remove
-                  </div>
-                  <input
-                    type="checkbox"
-                    className="toggle clickable"
-                    checked={extension.isActive}
-                    onChange={() =>
-                      setExtensions((prev) =>
-                        prev.map((ext, i) =>
-                          i === index
-                            ? { ...ext, isActive: !ext.isActive }
-                            : ext,
-                        ),
-                      )
-                    }
-                  ></input>
-                </div>
+        {filteredExtensions.map((extension) => (
+          <div className="extension" key={extension.name}>
+            <div className="extension-info-container">
+              <div className="extension-image-container">
+                <img src={extension.logo} />
               </div>
-            );
-          })}
+              <div className="extension-text-container">
+                <h2>{extension.name}</h2>
+                <p>{extension.description}</p>
+              </div>
+            </div>
+
+            <div className="extension-interactions-container">
+              <div
+                className="remove-button clickable"
+                onClick={() =>
+                  setExtensions((prev) =>
+                    prev.filter((ext) => ext.name !== extension.name),
+                  )
+                }
+              >
+                Remove
+              </div>
+
+              <input
+                type="checkbox"
+                className="toggle clickable"
+                checked={!!extension.isActive}
+                onChange={() =>
+                  setExtensions((prev) =>
+                    prev.map((ext) =>
+                      ext.name === extension.name
+                        ? { ...ext, isActive: !ext.isActive }
+                        : ext,
+                    ),
+                  )
+                }
+              />
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );
