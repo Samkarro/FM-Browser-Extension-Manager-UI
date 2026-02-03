@@ -44,7 +44,20 @@ export default function MainContent() {
                   >
                     Remove
                   </div>
-                  <input type="checkbox" className="toggle clickable"></input>
+                  <input
+                    type="checkbox"
+                    className="toggle clickable"
+                    checked={extension.isActive}
+                    onChange={() =>
+                      setExtensions((prev) =>
+                        prev.map((ext, i) =>
+                          i === index
+                            ? { ...ext, isActive: !ext.isActive }
+                            : ext,
+                        ),
+                      )
+                    }
+                  ></input>
                 </div>
               </div>
             );
