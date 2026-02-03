@@ -1,0 +1,25 @@
+header {
+  background-color: var(--gray);
+  height: 72px;
+  padding: 16px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: var(--gray-alt);
+  border-radius: 10px;
+  transition: 200ms;
+}
+
+.theme-button:hover {
+  background-color: var(--light-gray);
+}
