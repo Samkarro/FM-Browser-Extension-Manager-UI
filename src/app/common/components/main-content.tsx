@@ -36,7 +36,7 @@ export default function MainContent() {
                 </div>
                 <div className="extension-interactions-container">
                   <div className="remove-button clickable">Remove</div>
-                  <div className="toggle clickable"></div>
+                  <input type="checkbox" className="toggle clickable"></input>
                 </div>
               </div>
             );
